@@ -48,7 +48,7 @@ export default {
                 {
                     path: '/mall',
                     name: 'mall',
-                    label: '商品管理',
+                    label: '投稿',
                     icon: 'video-play',
                     url: 'MallManage/MallManage',
                 },
