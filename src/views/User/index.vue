@@ -19,7 +19,7 @@
             <div class="manage-header">
                 <el-button type="primary" @click="addUser">+ 新增</el-button>
                 <common-form :formLabel="formLabel" :form="searchForm" :inline="true" ref="form">
-                    <el-button type="primary" @click="getList">搜索</el-button>
+                    <el-button type="primary" @click="getList(searchForm.keyword)">搜索</el-button>
                 </common-form>
             </div>
             <common-table
@@ -171,6 +171,7 @@ export default {
                     item.sexLabel = item.sex === 0 ? '女' : '男';
                     return item;
                 });
+                // console.log(this.tableData);
                 this.config.total = res.count;
                 this.config.loading = false;
             });
@@ -179,6 +180,7 @@ export default {
             this.operateType = 'edit';
             this.isShow = true;
             this.operateForm = row;
+            console.log(row);
         },
         delUser(row) {
             this.$confirm('此操作将永久删除该文件,是否继续?', '提示', {
@@ -188,7 +190,7 @@ export default {
             }).then(() => {
                 const id = row.id;
                 this.$http
-                    .get('user/del', {
+                    .post('user/del', {
                         params: id,
                     })
                     .then(() => {

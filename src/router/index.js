@@ -36,6 +36,11 @@ const routes = [
             },
         ],
     },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('../views/Login'),
+    },
 ];
 
 export default new VueRouter({

@@ -48,7 +48,7 @@ export default {
                 {
                     path: '/mall',
                     name: 'mall',
-                    label: '投稿',
+                    label: '投稿管理',
                     icon: 'video-play',
                     url: 'MallManage/MallManage',
                 },
@@ -110,7 +110,7 @@ export default {
             return this.$store.state.tab.isCollapse;
         },
         menuTitle() {
-            return this.isCollapse ? '后台' : '后台管理系统';
+            return this.isCollapse ? '后台' : '云创后台管理系统';
         },
     },
 };

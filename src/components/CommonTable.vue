@@ -1,8 +1,7 @@
 <template>
     <div class="common-table">
-        <el-table :data="tableData" height="90px" stripe>
+        <el-table :data="tableData" height="650px" stripe>
             <el-table-column
-                :prop="col.id"
                 show-overflow-tooltip
                 v-for="item in tableLabel"
                 :key="item.prop"
@@ -14,19 +13,21 @@
                 </template>
             </el-table-column>
             <el-table-column label="操作" min-width="100">
-                <el-button size="mini" @click="handleEdit">编辑</el-button>
-                <el-button type="danger" size="mini" @click="handleDelete">删除</el-button>
+                <template slot-scope="scope">
+                    <el-button size="mini" @click="handleEdit(scope.row)">编辑</el-button>
+                    <el-button type="danger" size="mini" @click="handleDelete">删除</el-button>
+                </template>
             </el-table-column>
-            <el-pagination
-                @current-change="changePage"
-                :current-page.sync="config.page"
-                :page-size="20"
-                layout="prev,pager,next"
-                :total="totalNum"
-                class="pager"
-            >
-            </el-pagination>
         </el-table>
+        <el-pagination
+            @current-change="changePage"
+            :current-page.sync="config.page"
+            :page-size="20"
+            layout="prev,pager,next"
+            :total="config.total"
+            class="pager"
+        >
+        </el-pagination>
     </div>
 </template>
 
@@ -57,7 +58,7 @@ export default {
 
 <style lang="less" scoped>
 .common-table {
-    height: calc(100%-62px);
+    height: calc(100% - 62px);
     background: #fff;
     position: relative;
     .pager {

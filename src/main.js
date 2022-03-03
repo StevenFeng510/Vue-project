@@ -29,9 +29,9 @@ import {
     Switch,
     DatePicker,
     Option,
-    Table,
-    TableColumn,
     Pagination,
+    MessageBox,
+    Message,
 } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import './assets/less/index.css';
@@ -71,11 +71,24 @@ Vue.use(Select);
 Vue.use(Switch);
 Vue.use(DatePicker);
 Vue.use(Option);
-Vue.use(Table);
-Vue.use(TableColumn);
 Vue.use(Pagination);
+Vue.use(MessageBox);
+Vue.use(Message);
 
 Vue.prototype.$http = http;
+Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$message = Message;
+
+// 监听路由
+router.beforeEach((to, from, next) => {
+    store.commit('getToken');
+    const token = store.state.user.token;
+    if (!token && to.name !== 'login') {
+        next({ name: 'login' });
+    } else {
+        next();
+    }
+});
 
 new Vue({
     store,
