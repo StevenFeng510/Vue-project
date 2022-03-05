@@ -38,7 +38,7 @@ export default {
     data() {
         return {
             menu: [
-                {
+                /*      {
                     path: '/',
                     name: 'home',
                     label: '首页',
@@ -78,7 +78,7 @@ export default {
                             url: 'Other/PageTwo',
                         },
                     ],
-                },
+                }, */
             ],
         };
     },
@@ -99,11 +99,11 @@ export default {
     computed: {
         // 无子路由
         noChildren() {
-            return this.menu.filter((item) => !item.children);
+            return this.asyncMenu.filter((item) => !item.children);
         },
         // 有子路由
         hasChildren() {
-            return this.menu.filter((item) => item.children);
+            return this.asyncMenu.filter((item) => item.children);
         },
         // state中 是否展开
         isCollapse() {
@@ -111,6 +111,9 @@ export default {
         },
         menuTitle() {
             return this.isCollapse ? '后台' : '云创后台管理系统';
+        },
+        asyncMenu() {
+            return this.$store.state.tab.menu;
         },
     },
 };

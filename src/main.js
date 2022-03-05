@@ -41,7 +41,6 @@ import store from './store';
 import http from 'axios';
 import './api/mock.js';
 
-Vue.config.productionTip = false;
 Vue.use(Button);
 Vue.use(Dialog);
 
@@ -72,10 +71,11 @@ Vue.use(Switch);
 Vue.use(DatePicker);
 Vue.use(Option);
 Vue.use(Pagination);
-Vue.use(MessageBox);
-Vue.use(Message);
+
+Vue.config.productionTip = false;
 
 Vue.prototype.$http = http;
+// 不要用Vue.use 注册
 Vue.prototype.$confirm = MessageBox.confirm;
 Vue.prototype.$message = Message;
 
