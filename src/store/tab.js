@@ -53,27 +53,28 @@ export default {
             }
             const menu = JSON.parse(Cookie.get('menu'));
             state.menu = menu;
-            console.log(menu);
+            // console.log(menu);
             const menuArray = [];
             menu.forEach((item) => {
-                console.log();
                 if (item.children) {
-                    item.children = item.children.map((item) => {
+                    item.children = item.children.map(() => {
                         item.component = () => import(`../views/${item.url}`);
                         return item;
                     });
                     menuArray.push(...item.children);
                 } else {
                     item.component = () => import(`../views/${item.url}`);
-                    menuArray.push(...item.children);
+                    menuArray.push(item);
                 }
             });
             console.log(menuArray);
 
+            console.log(router);
             // 路由的动态添加;
             menuArray.forEach((item) => {
-                router.addRoutes('Main', item);
+                router.addRoute('Main', item);
             });
+            // router.addRoutes('Main', menuArray);
         },
     },
 };
