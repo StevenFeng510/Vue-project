@@ -57,7 +57,7 @@ export default {
             const menuArray = [];
             menu.forEach((item) => {
                 if (item.children) {
-                    item.children = item.children.map(() => {
+                    item.children = item.children.map((item) => {
                         item.component = () => import(`../views/${item.url}`);
                         return item;
                     });
@@ -67,14 +67,10 @@ export default {
                     menuArray.push(item);
                 }
             });
-            console.log(menuArray);
-
-            console.log(router);
             // 路由的动态添加;
             menuArray.forEach((item) => {
                 router.addRoute('Main', item);
             });
-            // router.addRoutes('Main', menuArray);
         },
     },
 };

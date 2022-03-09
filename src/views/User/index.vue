@@ -183,12 +183,13 @@ export default {
             console.log(row);
         },
         delUser(row) {
-            /*  this.$confirm('此操作将永久删除该文件,是否继续?', '提示', {
+            this.$confirm('此操作将永久删除该文件,是否继续?', '提示', {
                 confirmButtonText: '确认',
                 cancelButtonText: '取消',
                 type: 'warning',
             }).then(() => {
                 const id = row.id;
+                console.log(id);
                 this.$http
                     .post('/user/del', {
                         params: id,
@@ -200,8 +201,7 @@ export default {
                         });
                         this.getList();
                     });
-            }); */
-            console.log(row);
+            });
         },
     },
     created() {

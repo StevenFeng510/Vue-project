@@ -12,25 +12,25 @@ export default {
                 data: {
                     menu: [
                         {
-                            path: '/',
+                            path: '/home',
                             name: 'home',
                             label: '首页',
                             icon: 's-home',
-                            url: 'Home/index',
+                            url: 'Home',
                         },
                         {
                             path: '/mall',
                             name: 'mall',
                             label: '投稿管理',
                             icon: 'video-play',
-                            url: 'Mall/index',
+                            url: 'Mall',
                         },
                         {
                             path: '/user',
                             name: 'user',
                             label: '用户管理',
                             icon: 'user',
-                            url: 'User/index',
+                            url: 'User',
                         },
                         {
                             label: '其他',
@@ -63,7 +63,7 @@ export default {
                 data: {
                     menu: [
                         {
-                            path: '/',
+                            path: '/home',
                             name: 'home',
                             label: '首页',
                             icon: 's-home',

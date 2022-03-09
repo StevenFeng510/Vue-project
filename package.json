@@ -18,9 +18,9 @@
     "less-loader": "5.0.0",
     "mockjs": "^1.1.0",
     "serve": "^13.0.2",
-    "vue": "^2.6.14",
+    "vue": "2.6.14",
     "vue-loader": "^17.0.0",
-    "vue-router": "3.3.0",
+    "vue-router": "3.5.1",
     "vuex": "3.6.2"
   },
   "devDependencies": {
@@ -51,5 +51,9 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "main": "index.js",
+  "repository": "git@github.com:StevenFeng510/Vue-project.git",
+  "author": "Steven <850613079@qq.com>",
+  "license": "MIT"
 }
