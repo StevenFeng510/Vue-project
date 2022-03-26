@@ -9,10 +9,10 @@ export default {
         for (let i = 0; i < 7; i++) {
             List.push(
                 Mock.mock({
-                    苹果: Mock.Random.float(100, 8000, 0, 0),
-                    vivo: Mock.Random.float(100, 8000, 0, 0),
-                    oppo: Mock.Random.float(100, 8000, 0, 0),
-                    魅族: Mock.Random.float(100, 8000, 0, 0),
+                    播放量: Mock.Random.float(100, 8000, 0, 0),
+                    粉丝数: Mock.Random.float(100, 8000, 0, 0),
+                    用户活跃度: Mock.Random.float(100, 8000, 0, 0),
+                    时间: Mock.Random.float(100, 8000, 0, 0),
                     三星: Mock.Random.float(100, 8000, 0, 0),
                     小米: Mock.Random.float(100, 8000, 0, 0),
                 })
