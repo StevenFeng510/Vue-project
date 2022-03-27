@@ -1,5 +1,5 @@
 <template>
-    <div>我是商品页面</div>
+    <div>我是一个管理页面</div>
 </template>
 
 <script>

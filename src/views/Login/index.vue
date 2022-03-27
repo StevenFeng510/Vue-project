@@ -1,30 +1,37 @@
 <template>
-    <el-form
-        :model="form"
-        status-icon
-        :rules="rules"
-        ref="form"
-        label-width="100px"
-        class="login-container"
-    >
-        <h3 class="login_title">系统登录</h3>
-        <el-form-item label="用户名" label-width="80px" prop="username" class="username">
-            <el-input
-                type="input"
-                v-model="form.username"
-                placeholder="请输入帐号"
-                auto-complete="off"
-            ></el-input>
-        </el-form-item>
-        <el-form-item label="密码" label-width="80px" prop="password">
-            <el-input type="input" v-model="form.password" placeholder="请输入密码"></el-input>
-        </el-form-item>
-        <el-form-item class="login_submit">
-            <el-button type="primary" size="default" @click="login" class="login_submit"
-                >登录</el-button
-            >
-        </el-form-item>
-    </el-form>
+    <div>
+        <el-form
+            :model="form"
+            status-icon
+            :rules="rules"
+            ref="form"
+            label-width="100px"
+            class="login-container"
+        >
+            <h3 class="login_title">系统登录</h3>
+            <el-form-item label="用户名" label-width="80px" prop="username" class="username">
+                <el-input
+                    type="input"
+                    v-model="form.username"
+                    placeholder="请输入帐号"
+                    auto-complete="off"
+                ></el-input>
+            </el-form-item>
+            <el-form-item label="密码" label-width="80px" prop="password">
+                <el-input type="input" v-model="form.password" placeholder="请输入密码"></el-input>
+            </el-form-item>
+            <el-form-item class="login_submit">
+                <el-button type="primary" size="default" @click="login" class="login_submit"
+                    >登录</el-button
+                >
+            </el-form-item>
+        </el-form>
+        <div class="accountInfo">
+            <h2>测试用:</h2>
+            管理员帐号: admin 密码: 123456 <br />
+            用户账号: Steven 密码: 123456
+        </div>
+    </div>
 </template>
 
 <script>
@@ -98,5 +105,13 @@ export default {
 }
 .login_submit {
     margin: 10px auto 0px auto;
+}
+.el-form.login-container {
+    margin-bottom: 0px;
+}
+.accountInfo {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }
 </style>
