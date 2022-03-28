@@ -6,7 +6,9 @@
 export default {
     name: 'Mall',
     data() {
-        return {};
+        return {
+            mall: '123',
+        };
     },
 };
 </script>
