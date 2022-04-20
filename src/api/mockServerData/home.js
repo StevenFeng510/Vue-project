@@ -24,28 +24,20 @@ export default {
                 // 饼图
                 videoData: [
                     {
-                        name: '小米',
+                        name: '粉丝活跃数',
                         value: 2999,
                     },
                     {
-                        name: '苹果',
+                        name: '投稿量',
                         value: 5999,
                     },
                     {
-                        name: 'vivo',
+                        name: '男性粉丝',
                         value: 1500,
                     },
                     {
-                        name: 'oppo',
+                        name: '女性粉丝',
                         value: 1999,
-                    },
-                    {
-                        name: '魅族',
-                        value: 2200,
-                    },
-                    {
-                        name: '三星',
-                        value: 4500,
                     },
                 ],
                 // 柱状图

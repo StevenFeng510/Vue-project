@@ -48,13 +48,13 @@ class HttpRequest {
     request(options) {
         // 请求
         // /api/getList  /api/getHome
-        const instanse = axios.create();
+        const instance = axios.create();
         // 技巧
         // /api // api1
         options = { ...this.getInsideConfig(), ...options };
-        // console.log(options);
-        this.interceptors(instanse);
-        return instanse(options);
+        console.log(options);
+        this.interceptors(instance);
+        return instance(options);
     }
 }
 

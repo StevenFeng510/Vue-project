@@ -80,10 +80,10 @@ export default {
             userImg: require('../../assets/images/user.png'),
             tableData: [],
             tablelabel: {
-                name: '课程',
-                todayBuy: '今日购买',
-                monthBuy: '本月购买',
-                totalBuy: '总购买',
+                name: '粉丝',
+                todayBuy: '增长量',
+                monthBuy: '活跃度',
+                totalBuy: '投币数量',
             },
             countData: [
                 {
